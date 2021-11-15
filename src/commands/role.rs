@@ -1,10 +1,11 @@
-use serenity::framework::standard::{macros::command, CommandResult};
+use serenity::framework::standard::{macros::command, Args, CommandResult};
+use serenity::http::CacheHttp;
 use serenity::model::prelude::*;
 use serenity::prelude::*;
 
 #[command]
 #[description("role一覧")]
-async fn all_role(ctx: &Context, msg: &Message) -> CommandResult {
+async fn view_roles(ctx: &Context, msg: &Message) -> CommandResult {
     let guild = msg.guild_id.unwrap();
     let roles = guild.roles(&ctx.http()).await?;
 

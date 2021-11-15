@@ -1,2 +1,3 @@
 pub mod neko;
-pub mod channels;
+pub mod channel;
+pub mod role;
